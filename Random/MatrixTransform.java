@@ -20,6 +20,8 @@ public class MatrixTransform{
 
     public static int[][] matrixTransform(int[][] matrix, int m, int n){
 
+        if(m == n) return matrix;
+
         int b = m > n ? m : n;
 
         int[][] newMatrix = new int[b][b];
