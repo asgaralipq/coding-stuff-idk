@@ -32,12 +32,15 @@ public class MatrixTransform{
             }
         }
 
-        for(int i = 0; i < b; i++){
-            for(int j = 0; j < b; j++){
+        for(int i = b - 1; i >= (m < n ? m : 0); i--){
+            // System.out.println("i "+i);
+            for(int j = b - 1; j >= (m < n ? 0 : n); j--){
+                // System.out.println("j "+j);
                 if(newMatrix[i][j] == 0)
                     newMatrix[i][j] = 1; 
             }
         }
+        
         return newMatrix;
     }
 
