@@ -8,25 +8,24 @@ public class QuickSort{
         
         int n = sc.nextInt();
         int[] arr = new int[n];
-
         for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
 
         System.out.println(Arrays.toString(arr));
-
-        quickSort(arr, 0, n - 1);
-
+        quickSort(arr);
         System.out.println(Arrays.toString(arr));
-
         sc.close();
     }
 
-    static void quickSort(int[] arr, int lowIndex, int highIndex){
+    private static void quickSort(int[] arr){
+        quickSort(arr, 0, arr.length - 1);
+    }
+
+    private static void quickSort(int[] arr, int lowIndex, int highIndex){
         if(lowIndex >= highIndex){
             return;
         }
-
         int pivot = partition(arr, lowIndex, highIndex);
         quickSort(arr, lowIndex, pivot - 1);
         quickSort(arr, pivot + 1, highIndex);
