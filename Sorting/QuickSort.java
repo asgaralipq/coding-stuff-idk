@@ -15,6 +15,7 @@ public class QuickSort{
         System.out.println(Arrays.toString(arr));
         quickSort(arr);
         System.out.println(Arrays.toString(arr));
+
         sc.close();
     }
 
@@ -39,15 +40,12 @@ public class QuickSort{
             while(arr[left] <= pivot && left < right){
                 left++;
             }
-
             while(arr[right] >= pivot && left < right){
                 right--;
             }
-
             swap(arr, left, right);
         }
         swap(arr, left, high);
-
         return left;
     }
 
